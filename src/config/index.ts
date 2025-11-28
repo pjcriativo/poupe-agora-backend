@@ -1,50 +1,50 @@
-import 'dotenv/config';
+import { env } from './env';
 
 export const config = {
     server: {
-        port: parseInt(process.env.PORT || '3000'),
-        env: process.env.NODE_ENV || 'development',
+        port: parseInt(env.PORT),
+        env: env.NODE_ENV,
     },
 
     supabase: {
-        url: process.env.SUPABASE_URL!,
-        anonKey: process.env.SUPABASE_ANON_KEY!,
-        serviceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY!,
+        url: env.SUPABASE_URL,
+        anonKey: env.SUPABASE_ANON_KEY,
+        serviceRoleKey: env.SUPABASE_SERVICE_ROLE_KEY,
     },
 
     redis: {
-        host: process.env.REDIS_HOST || 'localhost',
-        port: parseInt(process.env.REDIS_PORT || '6379'),
-        password: process.env.REDIS_PASSWORD || undefined,
+        host: env.REDIS_HOST,
+        port: parseInt(env.REDIS_PORT),
+        password: env.REDIS_PASSWORD,
     },
 
     openai: {
-        apiKey: process.env.OPENAI_API_KEY!,
+        apiKey: env.OPENAI_API_KEY,
     },
 
     evolution: {
-        apiUrl: process.env.EVOLUTION_API_URL!,
-        apiKey: process.env.EVOLUTION_API_KEY!,
-        instanceName: process.env.EVOLUTION_INSTANCE_NAME!,
+        apiUrl: env.EVOLUTION_API_URL,
+        apiKey: env.EVOLUTION_API_KEY,
+        instanceName: env.EVOLUTION_INSTANCE_NAME,
     },
 
     perfectpay: {
-        apiUrl: process.env.PERFECTPAY_API_URL!,
-        apiKey: process.env.PERFECTPAY_API_KEY!,
-        webhookSecret: process.env.PERFECTPAY_WEBHOOK_SECRET!,
+        apiUrl: env.PERFECTPAY_API_URL,
+        apiKey: env.PERFECTPAY_API_KEY,
+        webhookSecret: env.PERFECTPAY_WEBHOOK_SECRET,
     },
 
     asaas: {
-        apiUrl: process.env.ASAAS_API_URL!,
-        apiKey: process.env.ASAAS_API_KEY!,
-        webhookSecret: process.env.ASAAS_WEBHOOK_SECRET!,
+        apiUrl: env.ASAAS_API_URL,
+        apiKey: env.ASAAS_API_KEY,
+        webhookSecret: env.ASAAS_WEBHOOK_SECRET,
     },
 
     intent: {
-        ttlSeconds: parseInt(process.env.INTENT_TTL_SECONDS || '300'),
+        ttlSeconds: parseInt(env.INTENT_TTL_SECONDS),
     },
 
     worker: {
-        concurrency: parseInt(process.env.WORKER_CONCURRENCY || '5'),
+        concurrency: parseInt(env.WORKER_CONCURRENCY),
     },
 };

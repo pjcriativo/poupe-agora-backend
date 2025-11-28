@@ -1,7 +1,7 @@
 import Fastify from 'fastify';
 import { config } from './config';
 import { logger } from './utils/logger';
-import redis from './database/redis';
+import { redis } from './config/redis';
 
 const server = Fastify({
     logger: false,
